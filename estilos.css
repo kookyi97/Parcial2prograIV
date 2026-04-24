@@ -1,0 +1,413 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+h1 {
+    color: #2d5e2c;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    border-left: 5px solid #4caf50;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+h2 {
+    color: #2d5e2c;
+    font-size: 1.8em;
+    margin: 20px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #4caf50;
+    display: inline-block;
+}
+
+h1::before {
+    content: "🛒 ";
+}
+
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    padding: 15px 12px;
+    font-weight: 600;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.01);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilo para filas alternas */
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+
+form {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select, textarea, button {
+    padding: 12px 15px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+input:hover, select:hover, textarea:hover {
+    border-color: #4caf50;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #555;
+}
+
+button {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 1.05em;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #45a049, #3d8b40);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+a:hover {
+    color: #2d5e2c;
+    background-color: #f0f0f0;
+    text-decoration: underline;
+}
+
+
+.error {
+    background: #ffebee;
+    color: #c62828;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #c62828;
+    margin: 15px 0;
+    font-weight: 500;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #2e7d32;
+    margin: 15px 0;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.logout-btn {
+    background: #ff5722;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 15px;
+    color: white;
+    border-radius: 8px;
+}
+
+.logout-btn:hover {
+    background: #e64a19;
+    color: white;
+    text-decoration: none;
+}
+
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+    
+    input, select, textarea, button {
+        max-width: 100%;
+        font-size: 0.9em;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+
+.login-container {
+    max-width: 450px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login-container h2 {
+    display: block;
+    text-align: center;
+}
+
+.login-container form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.login-container input {
+    text-align: center;
+}
+
+
+.btn-primary {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+
+.navbar {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2d5e2c;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.badge-success {
+    background: #4caf50;
+    color: white;
+}
+
+.badge-danger {
+    background: #f44336;
+    color: white;
+}
+
+.badge-warning {
+    background: #ff9800;
+    color: white;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:active {
+    animation: pulse 0.2s ease;
+}
